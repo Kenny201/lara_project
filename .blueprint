@@ -1,0 +1,17 @@
+created:
+    - database/factories/PostFactory.php
+    - database/factories/CategoryFactory.php
+    - database/factories/UserFactory.php
+    - database/migrations/2021_11_09_212958_create_posts_table.php
+    - database/migrations/2021_11_09_212959_create_categories_table.php
+    - database/migrations/2021_11_09_213000_create_users_table.php
+    - app/Models/Post.php
+    - app/Models/Category.php
+    - app/Models/User.php
+    - database/seeders/PostSeeder.php
+    - database/seeders/CategorySeeder.php
+    - database/seeders/UserSeeder.php
+models:
+    Post: { title: 'string:400', excript: longtext, body: text, slug: 'string unique', published_at: 'nullable timestamp', relationships: { belongsTo: 'Category, User' } }
+    Category: { title: 'string:400', slug: 'string unique', relationships: { hasMany: Post } }
+    User: { name: 'string:400', email: 'string unique', email_verified_at: 'nullable timestamp', password: string, remember_token: rememberToken, relationships: { hasMany: Post } }

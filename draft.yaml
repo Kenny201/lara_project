@@ -1,0 +1,23 @@
+models:
+  Post:
+    title: string:400
+    excript: longtext
+    body: text
+    slug: string unique
+    published_at: nullable timestamp
+    relationships:
+      belongsTo: Category, User
+  Category:
+    title: string:400
+    slug: string unique
+    relationships:
+      hasMany: Post
+  User:
+    name: string:400
+    email: string unique
+    email_verified_at: nullable timestamp
+    password: string
+    remember_token: rememberToken
+    relationships:
+      hasMany: Post
+seeders: Post, Category, User
