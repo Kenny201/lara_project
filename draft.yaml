@@ -1,12 +1,12 @@
 models:
   Post:
     title: string:400
-    category_id: id foreign
-    user_id: if foreign
     excript: longtext
     body: text
     slug: string unique
     published_at: nullable timestamp
+    relationships:
+      belongsTo: Category, User
   Category:
     title: string:400
     slug: string unique
@@ -20,4 +20,4 @@ models:
     remember_token: rememberToken
     relationships:
       hasMany: Post
-seeders: User, Post, Category,
+seeders: Post, Category, User
