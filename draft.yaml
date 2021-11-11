@@ -2,7 +2,7 @@ models:
   Post:
     title: string:400
     category_id: id foreign
-    user_id: if foreign
+    user_id: id foreign
     excript: longtext
     body: text
     slug: string unique
