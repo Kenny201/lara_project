@@ -6,5 +6,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
 <body style="font-family: Open Sans, sans-serif">
-    @yield('content')
+<section class="px-6 py-8">
+    <x-home.nav/>
+    {{ $slot }}
+   <x-home.footer/>
+</section>
+<script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
 </body>

@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('posts/{post:slug}', [HomeController::class, 'show'])->name('post.show');
+Route::get('categories/{post:slug}', [HomeController::class, 'show'])->name('post.show');
